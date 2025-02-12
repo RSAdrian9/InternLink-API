@@ -1,66 +1,53 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<pre class="vditor-reset" placeholder="" contenteditable="true" spellcheck="false"><div class="vditor-wysiwyg__block" data-type="html-block" data-block="0"><pre class="vditor-wysiwyg__preview" data-render="1"><p align="center"><a href="https://laravel.com/" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"/></a></p></pre></div><p data-block="0"></p></pre>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Sistema de Gestión de Institutos y Alumnos.
 
-## About Laravel
+Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite gestionar **institutos y alumnos**. Implementa un **CRUD**, **autenticación de API**, **relaciones entre modelos**, y funcionalidades avanzadas como **exportación a CSV**, **testing** y **deploy**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Funcionalidades Implementadas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Sprint 1. CRUD de Alumnos e Institutos.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### 🏫 Gestión de Institutos.
 
-## Learning Laravel
+* **Crear nuevo instituto.** Permite registrar institutos.
+* **Editar instituto.** Actualiza la información de un instituto existente.
+* **Mostrar detalles del instituto.** Visualiza la información detallada de un instituto.
+* **Eliminar instituto.** Permite eliminar un instituto.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### 👨‍🎓 Gestión de Alumnos.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* **Crear nuevo alumno.** Permite registrar alumnos.
+* **Editar alumno.** Actualiza la información de un alumno existente.
+* **Mostrar detalles del alumno.** Visualiza la información detallada de un alumno.
+* **Eliminar alumno.** Permite eliminar un alumno.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### 🔄 **Generación de Datos de Prueba**
 
-## Laravel Sponsors
+* **Seeders:** Se han configurado seeders para poblar automáticamente la base de datos con información inicial.
+* **Factories:** Uso de factories para la creación rápida y flexible de instancias de modelos con datos ficticios.
+* **Faker:** Implementación de Faker para generar nombres, correos y otros datos de manera aleatoria y realista, mejorando la simulación de un entorno real.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Sprint 2: API REST.
 
-### Premium Partners
+**API para Institutos y Alumnos.** Implementación de endpoints para la gestión de institutos y alumnos.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**Autenticación con Laravel Sanctum.** Seguridad en la API para proteger los datos.
 
-## Contributing
+##### Rutas de la API
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+📌 **Institutos:**
 
-## Code of Conduct
+* `GET /api/schools` → Listar todos los institutos
+* `POST /api/schools` → Crear un nuevo instituto
+* `GET /api/schools/{id}` → Ver detalles de un instituto
+* `PUT /api/schools/{id}` → Actualizar instituto
+* `DELETE /api/schools/{id}` → Eliminar instituto
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+📌 **Alumnos:**
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* `GET /api/students` → Listar todos los alumnos
+* `POST /api/students` → Registrar un nuevo alumno
+* `GET /api/students/{id}` → Ver detalles de un alumno
+* `PUT /api/students/{id}` → Actualizar alumno
+* `DELETE /api/students/{id}` → Eliminar alumno
