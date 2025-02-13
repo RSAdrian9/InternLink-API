@@ -28,6 +28,9 @@ Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite 
 * **Factories:** Uso de factories para la creación rápida y flexible de instancias de modelos con datos ficticios.
 * **Faker:** Implementación de Faker para generar nombres, correos y otros datos de manera aleatoria y realista, mejorando la simulación de un entorno real.
 
+  `SchoolFactory` y `SchoolSeeder` se encargan de crear 5 institutos, con sus respectivos atributos (`name`, `city`).
+  `StudentFactory` y `StudentSeeder` generan múltiples alumnos asociados a estos institutos.
+
 ### Sprint 2: API REST.
 
 **API para Institutos y Alumnos.** Implementación de endpoints para la gestión de institutos y alumnos.
