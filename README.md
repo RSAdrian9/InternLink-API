@@ -38,16 +38,26 @@ Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite 
 
 📌 **Institutos:**
 
-* `GET /api/schools` → Listar todos los institutos
-* `POST /api/schools` → Crear un nuevo instituto
-* `GET /api/schools/{id}` → Ver detalles de un instituto
-* `PUT /api/schools/{id}` → Actualizar instituto
-* `DELETE /api/schools/{id}` → Eliminar instituto
+* ✅ `GET /api/schools` → Listar todos los institutos.
+* ✅ `POST /api/schools` → Crear un nuevo instituto.
+* ✅ `GET /api/schools/{id}` → Ver detalles de un instituto.
+* ✅ `PUT /api/schools/{id}` → Actualizar instituto.
+* ✅ `DELETE /api/schools/{id}` → Eliminar instituto.
 
 📌 **Alumnos:**
 
-* `GET /api/students` → Listar todos los alumnos
-* `POST /api/students` → Registrar un nuevo alumno
-* `GET /api/students/{id}` → Ver detalles de un alumno
-* `PUT /api/students/{id}` → Actualizar alumno
-* `DELETE /api/students/{id}` → Eliminar alumno
+* ✅ `GET /api/students` → Listar todos los alumnos.
+* ✅ `POST /api/students` → Registrar un nuevo alumno.
+* ✅ `GET /api/students/{id}` → Ver detalles de un alumno.
+* ✅ `PUT /api/students/{id}` → Actualizar alumno.
+* ✅ `DELETE /api/students/{id}` → Eliminar alumno.
+
+## 👨‍💻 **Autor**
+
+Adrián Ruiz Sánchez
+
+[Correo](mailto:adrian.dev24@gmail.com)
+
+[GitHub](https://github.com/RSAdrian9)
+
+[LinkedIn](http://linkedin.com/in/adri%C3%A1n-ruiz-s%C3%A1nchez)
