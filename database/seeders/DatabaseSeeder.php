@@ -11,15 +11,9 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        $school = School::create([
-            'name' => 'Harvard University',
-            'city' => 'Cambridge'
-        ]);
-
-        Student::create([
-            'name' => 'John Doe',
-            'email' => 'johndoe@example.com',
-            'school_id' => $school->id
+        $this->call([
+            SchoolSeeder::class,
+            StudentSeeder::class,
         ]);
     }
 }
