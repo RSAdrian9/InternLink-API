@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\SchoolApiController;
 use App\Http\Controllers\Api\StudentApiController;
+use App\Http\Controllers\AuthController;
 
 /*
 Route::get('/user', function (Request $request) {
@@ -11,6 +12,13 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 */
 
+// Rutas públicas (Registro y Login)
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::resource('schools', SchoolApiController::class);
-Route::resource('students', StudentApiController::class);
+// Rutas protegidas con autenticación
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::resource('schools', SchoolApiController::class);
+    Route::resource('students', StudentApiController::class);
+});
