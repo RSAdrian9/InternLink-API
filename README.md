@@ -33,27 +33,44 @@ Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite 
 
 ### Sprint 2: API REST.
 
-**API para Institutos y Alumnos.** Implementación de endpoints para la gestión de institutos y alumnos.
+#### **🔒 Autenticación y Middleware.**
 
-**Autenticación con Laravel Sanctum.** Seguridad en la API para proteger los datos.
+Para proteger las rutas de la API, se ha implementado **Laravel Sanctum** como sistema de autenticación basado en tokens. Solo los usuarios autenticados pueden acceder a las rutas protegidas.
 
-##### Rutas de la API
+##### 📌 **Flujo de autenticación:**
 
-📌 **Institutos:**
+1. **Registro de usuario:** Se crea un nuevo usuario en la base de datos.
+2. **Inicio de sesión:** Se genera un token de autenticación para acceder a las rutas protegidas.
+3. **Acceso a la API:** El usuario debe enviar el token en el encabezado `Authorization: Bearer {token}`.
+4. **Cierre de sesión:** Se revoca el token de acceso.
 
-* ✅ `GET /api/schools` → Listar todos los institutos.
-* ✅ `POST /api/schools` → Crear un nuevo instituto.
-* ✅ `GET /api/schools/{id}` → Ver detalles de un instituto.
-* ✅ `PUT /api/schools/{id}` → Actualizar instituto.
-* ✅ `DELETE /api/schools/{id}` → Eliminar instituto.
+##### 📌 **Rutas de autenticación:**
 
-📌 **Alumnos:**
+* `POST /api/register` → Registro de usuario.
+* `POST /api/login` → Inicio de sesión (devuelve un token).
+* `POST /api/logout` → Cierre de sesión (revoca el token).
 
-* ✅ `GET /api/students` → Listar todos los alumnos.
-* ✅ `POST /api/students` → Registrar un nuevo alumno.
-* ✅ `GET /api/students/{id}` → Ver detalles de un alumno.
-* ✅ `PUT /api/students/{id}` → Actualizar alumno.
-* ✅ `DELETE /api/students/{id}` → Eliminar alumno.
+#### 🛡️ Rutas protegidas con autenticación.
+
+Para acceder a estas rutas, es obligatorio enviar el token en el encabezado:
+
+`Authorization: Bearer {token}`
+
+##### 📌 **Institutos:**
+
+* `GET /api/schools` → Listar todos los institutos.
+* `POST /api/schools` → Crear un nuevo instituto.
+* `GET /api/schools/{id}` → Ver detalles de un instituto.
+* `PUT /api/schools/{id}` → Actualizar instituto.
+* `DELETE /api/schools/{id}` → Eliminar instituto.
+
+##### 📌 **Alumnos:**
+
+* `GET /api/students` → Listar todos los alumnos.
+* `POST /api/students` → Registrar un nuevo alumno.
+* `GET /api/students/{id}` → Ver detalles de un alumno.
+* `PUT /api/students/{id}` → Actualizar alumno.
+* `DELETE /api/students/{id}` → Eliminar alumno.
 
 ## 👨‍💻 **Autor**
 
