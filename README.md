@@ -72,6 +72,13 @@ Para acceder a estas rutas, es obligatorio enviar el token en el encabezado:
 * `PUT /api/students/{id}` → Actualizar alumno.
 * `DELETE /api/students/{id}` → Eliminar alumno.
 
+### Sprint 3: Laravel (Back-end) & Vue (Front-end).
+
+📁 [Repositorio Front-end.
+](https://github.com/RSAdrian9/ProjectSchoolStudent-Front-end)
+
+🚀 Despliegue Front-end.
+
 ## 👨‍💻 **Autor**
 
 Adrián Ruiz Sánchez
