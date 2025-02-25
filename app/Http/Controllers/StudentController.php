@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StudentRequest;
+use App\Http\Resources\StudentResource;
 use App\Models\Student;
 use App\Models\School;
 use Illuminate\Http\Request;
@@ -43,16 +45,15 @@ class StudentController extends Controller
         return view('students.edit', compact('student', 'schools'));
     }
 
-    public function update(Request $request, Student $student)
+    public function update(StudentRequest $request, string $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'school_id' => 'required|exists:schools,id'
-        ]);
-
+        //
+        $student = Student::find($id);
         $student->update($request->all());
-        return redirect()->route('students.index')->with('success', 'Student updated successfully.');
+        return response()->json([
+            'success' => true,
+            'data' => new StudentResource($student)
+        ], 200);
     }
 
     public function destroy(Student $student)

@@ -19,6 +19,13 @@ class SchoolApiController extends Controller
         return SchoolResource::collection($schools);
     }
 
+    public function indexById($id)
+    {
+        // Se obtiene la escuela por su id
+        $school = School::find($id);
+        return new SchoolResource($school);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -33,10 +40,12 @@ class SchoolApiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(School $school)
+    public function show($id)
     {
         //
+        $school = School::findOrFail($id); // Se obtiene la escuela por su id y se lanza una excepción si no se encuentra
         return new SchoolResource($school);
+        //return $school; // Se retorna el instituto sin formato
     }
 
     /**
