@@ -17,8 +17,28 @@ class StudentApiController extends Controller
     public function index()
     {
         // Se obtienen los estudiantes paginados (se añadió la paginación, de forma opcional)
-        $students = Student::with('school')->paginate(10);
+        $students = Student::with('school')->paginate(5);
         return StudentResource::collection($students);
+    }
+
+    /**
+     * Display a listing of the resource by id.
+     */
+    public function indexById($id)
+    {
+        // Se obtiene el estudiante por su id
+        $student = Student::find($id);
+        return new StudentResource($student);
+    }
+
+    /**
+     * Display a listing of the resource by name.
+     */
+    public function indexByName($name)
+    {
+        // Se obtiene la estudiante por su nombre
+        $student = Student::find($name);
+        return new StudentResource($student);
     }
 
     /**

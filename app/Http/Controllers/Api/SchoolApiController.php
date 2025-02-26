@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SchoolRequest;
 use App\Http\Resources\SchoolResource;
 use App\Models\School;
 use Illuminate\Http\Request;
@@ -14,15 +15,28 @@ class SchoolApiController extends Controller
      */
     public function index()
     {
-        // Se obtienen las escuelas paginadas (se añadió la paginación, de forma opcional)
-        $schools = School::paginate(10);
+        // Se obtienen los institutos paginadas
+        $schools = School::paginate(7);
         return SchoolResource::collection($schools);
     }
 
+    /**
+     * Display a listing of the resource by id.
+     */
     public function indexById($id)
     {
         // Se obtiene la escuela por su id
         $school = School::find($id);
+        return new SchoolResource($school);
+    }
+
+    /**
+     * Display a listing of the resource by name.
+     */
+    public function indexByName($name)
+    {
+        // Se obtiene la escuela por su nombre
+        $school = School::find($name);
         return new SchoolResource($school);
     }
 
@@ -43,32 +57,35 @@ class SchoolApiController extends Controller
     public function show($id)
     {
         //
-        $school = School::findOrFail($id); // Se obtiene la escuela por su id y se lanza una excepción si no se encuentra
+        $school = School::findOrFail($id);
         return new SchoolResource($school);
-        //return $school; // Se retorna el instituto sin formato
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, School $school)
+    public function update(SchoolRequest $request, string $id)
     {
         //
-        $request->validate([
-            'name' => 'sometimes|required',
-            'city' => 'sometimes|required',
-        ]);
+        $school = School::find($id);
         $school->update($request->all());
-        return new SchoolResource($school);
+        return response()->json([
+            'success' => true,
+            'data' => new SchoolResource($school)
+        ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(School $school)
+    public function destroy(string $id)
     {
         //
+        $school = School::find($id);
         $school->delete();
-        return response()->json(['message' => 'School deleted successfully'], 200);
+        return response()->json([
+            'success' => true,
+            'data' => new SchoolResource($school)
+        ], 205);
     }
 }
