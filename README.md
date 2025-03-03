@@ -2,9 +2,25 @@
 
 # Sistema de Gestión de Institutos y Alumnos.
 
-Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite gestionar **institutos y alumnos**. Implementa un **CRUD**, **autenticación de API**, **relaciones entre modelos**, y funcionalidades avanzadas como **exportación a CSV**, **testing** y **deploy**.
+Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite gestionar institutos y alumnos. Implementa un **CRUD**, autenticación de **API con Laravel Sanctum**, relaciones entre modelos y funcionalidades avanzadas como **testing** y **deploy**.
 
-## Funcionalidades Implementadas.
+## 📖 Índice
+
+1. [Funcionalidades Implementadas](#funcionalidades-implementadas)
+2. [Sprint 1: CRUD y Datos de Prueba](#sprint-1-crud-y-datos-de-prueba)
+3. [Sprint 2: API REST y Autenticación](#sprint-2-api-rest-y-autenticacion)
+4. [Sprint 3: Integración con Vue](#sprint-3-integracion-con-vue)
+5. [Instalación y Configuración](#instalacion-y-configuracion)
+6. [Autor](#autor)
+
+## 🚀 Funcionalidades Implementadas
+
+✅ **CRUD completo de Institutos y Alumnos.**
+✅ **Autenticación con Laravel Sanctum.**
+✅ **Protección de rutas con Middleware.**
+✅ **Generación de datos de prueba con Seeders y Factories.**
+✅ **Relaciones entre modelos (Institutos ↔ Alumnos).**
+✅ **Despliegue y documentación de la API.**
 
 ### Sprint 1. CRUD de Alumnos e Institutos.
 
@@ -50,11 +66,16 @@ Para proteger las rutas de la API, se ha implementado **Laravel Sanctum** como s
 * `POST /api/login` → Inicio de sesión (devuelve un token).
 * `POST /api/logout` → Cierre de sesión (revoca el token).
 
+##### 📌 **Uso del token en ThunderClient o Postman:**
+
+1. Realizar **POST /api/login** con email y contraseña.
+2. Copiar el token de respuesta.
+3. En cada petición protegida, agregar el header:
+   ```
+   Authorization: Bearer {token}
+   ```
+
 #### 🛡️ Rutas protegidas con autenticación.
-
-Para acceder a estas rutas, es obligatorio enviar el token en el encabezado:
-
-`Authorization: Bearer {token}`
 
 ##### 📌 **Institutos:**
 
@@ -74,10 +95,55 @@ Para acceder a estas rutas, es obligatorio enviar el token en el encabezado:
 
 ### Sprint 3: Laravel (Back-end) & Vue (Front-end).
 
-📁 [Repositorio Front-end.
+#### 📁 [**Repositorio Front-end.**
 ](https://github.com/RSAdrian9/ProjectSchoolStudent-Front-end)
 
-🚀 Despliegue Front-end.
+#### ☁️ **Despliegue Front-end.**
+
+#### 📌 **Comunicación Front-End y Back-End:**
+
+- Se utiliza **Axios** para las peticiones HTTP.
+- Se gestiona la autenticación con el token de **Laravel Sanctum**.
+
+
+#### **🛠️ Testing**
+
+- Pruebas unitarias y funcionales para garantizar la integridad de la aplicación.
+
+## ⚙️ Instalación y Configuración.
+
+### 🛠 Requisitos Previos.
+
+- PHP 8+.
+- Composer.
+- Laravel 11.
+- Node.js (para Vue).
+
+### 📌 Pasos de instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/RSAdrian9/ProjectSchoolStudent-Back-end.git
+cd ProjectSchoolStudent-Back-end
+
+# Instalar dependencias
+composer install
+npm install
+
+# Configurar el archivo .env
+cp .env.example .env
+php artisan key:generate
+
+# Configurar la base de datos
+php artisan migrate --seed
+
+# Ejecutar el servidor
+php artisan serve
+```
+
+---
+
+---
 
 ## 👨‍💻 **Autor**
 
@@ -88,3 +154,7 @@ Adrián Ruiz Sánchez
 [GitHub](https://github.com/RSAdrian9)
 
 [LinkedIn](http://linkedin.com/in/adri%C3%A1n-ruiz-s%C3%A1nchez)
+
+---
+
+---
