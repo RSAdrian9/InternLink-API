@@ -6,21 +6,38 @@ Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite 
 
 ## 📖 Índice
 
-1. [Funcionalidades Implementadas](#funcionalidades-implementadas)
-2. [Sprint 1: CRUD y Datos de Prueba](#sprint-1-crud-y-datos-de-prueba)
-3. [Sprint 2: API REST y Autenticación](#sprint-2-api-rest-y-autenticacion)
-4. [Sprint 3: Integración con Vue](#sprint-3-integracion-con-vue)
-5. [Instalación y Configuración](#instalacion-y-configuracion)
-6. [Autor](#autor)
+1. [Tecnologías Utilizadas](#tecnologias-utilizadas)
+3. [Funcionalidades Implementadas](#funcionalidades-implementadas)
+4. [Sprint 1: CRUD y Datos de Prueba](#sprint-1-crud-y-datos-de-prueba)
+5. [Sprint 2: API REST y Autenticación](#sprint-2-api-rest-y-autenticacion)
+6. [Sprint 3: Integración con Vue y Testing](#sprint-3-integracion-con-vue-y-testing)
+7. [Instalación y Configuración](#instalacion-y-configuracion)
+8. [Autor](#autor)
+
+## **📌 Tecnologías Utilizadas**
+
+🔹 **Laravel 11** – Framework backend PHP.
+
+🔹 **Vue.js** – Frontend dinámico.
+
+🔹 **SQLite** – Base de datos.
+
+🔹 **Sanctum** – Autenticación API.
+
+🔹 **Blade** – Sistema de plantillas de Laravel.
+
+🔹 **Faker** – Generación de datos de prueba.
+
+🔹 **PHPUnit** – Testing automatizado.
 
 ## 🚀 Funcionalidades Implementadas
 
-✅ **CRUD completo de Institutos y Alumnos.**
-✅ **Autenticación con Laravel Sanctum.**
-✅ **Protección de rutas con Middleware.**
-✅ **Generación de datos de prueba con Seeders y Factories.**
-✅ **Relaciones entre modelos (Institutos ↔ Alumnos).**
-✅ **Despliegue y documentación de la API.**
+* ✅ **CRUD completo de Institutos y Alumnos.**
+* ✅ **Autenticación con Laravel Sanctum.**
+* ✅ **Protección de rutas con Middleware.**
+* ✅ **Generación de datos de prueba con Seeders y Factories.**
+* ✅ **Relaciones entre modelos (Institutos ↔ Alumnos).**
+* ✅ **Despliegue y documentación de la API.**
 
 ### Sprint 1. CRUD de Alumnos e Institutos.
 
@@ -95,8 +112,7 @@ Para proteger las rutas de la API, se ha implementado **Laravel Sanctum** como s
 
 ### Sprint 3: Laravel (Back-end) & Vue (Front-end).
 
-#### 📁 [**Repositorio Front-end.**
-](https://github.com/RSAdrian9/ProjectSchoolStudent-Front-end)
+#### [📁 Repositorio Front-end.](https://github.com/RSAdrian9/ProjectSchoolStudent-Front-end)
 
 #### ☁️ **Despliegue Front-end.**
 
@@ -104,7 +120,6 @@ Para proteger las rutas de la API, se ha implementado **Laravel Sanctum** como s
 
 - Se utiliza **Axios** para las peticiones HTTP.
 - Se gestiona la autenticación con el token de **Laravel Sanctum**.
-
 
 #### **🛠️ Testing**
 
@@ -143,8 +158,6 @@ php artisan serve
 
 ---
 
----
-
 ## 👨‍💻 **Autor**
 
 Adrián Ruiz Sánchez
@@ -154,7 +167,5 @@ Adrián Ruiz Sánchez
 [GitHub](https://github.com/RSAdrian9)
 
 [LinkedIn](http://linkedin.com/in/adri%C3%A1n-ruiz-s%C3%A1nchez)
-
----
 
 ---
