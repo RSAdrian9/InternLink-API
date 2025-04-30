@@ -14,9 +14,14 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('phone')->nullable();
+            $table->string('dni')->nullable()->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['admin', 'tutor', 'student', 'company']);
+            // $table->foreignId('school_id')->nullable()->constrained()->nullOnDelete();
+            $table->unsignedBigInteger('school_id')->nullable(); // O el tipo correcto, pero sin ->constrained() ni ->foreign()
             $table->rememberToken();
             $table->timestamps();
         });
