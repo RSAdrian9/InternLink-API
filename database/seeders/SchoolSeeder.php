@@ -13,7 +13,14 @@ class SchoolSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        School::factory(5)->create(); // Crea 5 institutos usando Factory
+        School::create([
+            'name' => 'Instituto Tecnológico Central',
+            'city' => 'Madrid',
+            'address' => 'Calle Falsa 123',
+            'zipcode' => '28080',
+            'phone' => '910000000',
+            'email' => 'contacto@itc.edu',
+            'website' => 'https://itc.edu'
+        ]);
     }
 }

@@ -13,7 +13,15 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        Student::factory(10)->create(); // Crea 10 alumnos usando Factory
+        Student::create([
+            'user_id' => 3,
+            'school_id' => 1,
+            'tutor_id' => 1,
+            'birthdate' => '2002-03-12',
+            'degree' => 'DAW',
+            'city' => 'Madrid',
+            'address' => 'Calle Real 456',
+            'zipcode' => '28080'
+        ]);
     }
 }

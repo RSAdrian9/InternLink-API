@@ -20,8 +20,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone',
+        'dni',
         'email',
         'password',
+        'role',
+        'school_id',
     ];
 
     /**
@@ -46,4 +50,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function school()
+    {
+        return $this->belongsTo(School::class);
+    }
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
+    public function tutor()
+    {
+        return $this->hasOne(Tutor::class);
+    }
+
 }

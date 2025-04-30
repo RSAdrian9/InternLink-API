@@ -1,18 +1,18 @@
 <pre class="vditor-reset" placeholder="" contenteditable="true" spellcheck="false"><div class="vditor-wysiwyg__block" data-type="html-block" data-block="0"><pre class="vditor-wysiwyg__preview" data-render="1"><p align="center"><a href="https://laravel.com/" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"/></a></p></pre></div><p data-block="0"></p></pre>
 
-# Sistema de Gestión de Institutos y Alumnos.
+# **InternLink]** – Plataforma de gestión académica y prácticas
 
 Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite gestionar institutos y alumnos. Implementa un **CRUD**, autenticación de **API con Laravel Sanctum**, relaciones entre modelos y funcionalidades avanzadas como **testing** y **deploy**.
 
 ## 📖 Índice
 
 1. [Tecnologías Utilizadas](#tecnologias-utilizadas)
-3. [Funcionalidades Implementadas](#funcionalidades-implementadas)
-4. [Sprint 1: CRUD y Datos de Prueba](#sprint-1-crud-y-datos-de-prueba)
-5. [Sprint 2: API REST y Autenticación](#sprint-2-api-rest-y-autenticacion)
-6. [Sprint 3: Integración con Vue y Testing](#sprint-3-integracion-con-vue-y-testing)
-7. [Instalación y Configuración](#instalacion-y-configuracion)
-8. [Autor](#autor)
+2. [Funcionalidades Implementadas](#funcionalidades-implementadas)
+3. [Sprint 1: CRUD y Datos de Prueba](#sprint-1-crud-y-datos-de-prueba)
+4. [Sprint 2: API REST y Autenticación](#sprint-2-api-rest-y-autenticacion)
+5. [Sprint 3: Integración con Vue y Testing](#sprint-3-integracion-con-vue-y-testing)
+6. [Instalación y Configuración](#instalacion-y-configuracion)
+7. [Autor](#autor)
 
 ## **📌 Tecnologías Utilizadas**
 

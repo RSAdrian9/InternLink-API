@@ -9,10 +9,10 @@ class School extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'city'];
+    protected $fillable = ['name', 'city', 'address', 'zipcode', 'phone', 'email', 'website'];
 
-    public function students()
+    public function users()
     {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(User::class);
     }
 }
