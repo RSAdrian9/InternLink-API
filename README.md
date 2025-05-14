@@ -1,8 +1,8 @@
 <pre class="vditor-reset" placeholder="" contenteditable="true" spellcheck="false"><div class="vditor-wysiwyg__block" data-type="html-block" data-block="0"><pre class="vditor-wysiwyg__preview" data-render="1"><p align="center"><a href="https://laravel.com/" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"/></a></p></pre></div><p data-block="0"></p></pre>
 
-# **InternLink]** – Plataforma de gestión académica y prácticas
+# **InternLink** – Plataforma de gestión académica y prácticas
 
-Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite gestionar institutos y alumnos. Implementa un **CRUD**, autenticación de **API con Laravel Sanctum**, relaciones entre modelos y funcionalidades avanzadas como **testing** y **deploy**.
+Aplicación web desarrollada en **Laravel 11** con frontend en **Vue.js**, orientada a facilitar la gestión de centros educativos, alumnado y su vinculación con prácticas en empresas. Parte de una base funcional (CRUD, autenticación, relaciones entre modelos), ampliando su alcance con mejoras en estructura, interfaz, control de versiones y usabilidad para adaptarse a escenarios reales como el seguimiento de prácticas.
 
 ## 📖 Índice
 
@@ -16,19 +16,15 @@ Este proyecto es una aplicación web desarrollada en **Laravel 11** que permite 
 
 ## **📌 Tecnologías Utilizadas**
 
-🔹 **Laravel 11** – Framework backend PHP.
+🔹 **Laravel 11** – Backend robusto y modular.
 
 🔹 **Vue.js** – Frontend dinámico.
 
-🔹 **SQLite** – Base de datos.
+🔹 **MySQL** – Base de datos escalable y versátil.
 
-🔹 **Sanctum** – Autenticación API.
+🔹 **Laravel Sanctum** – Autenticación API.
 
 🔹 **Blade** – Sistema de plantillas de Laravel.
-
-🔹 **Faker** – Generación de datos de prueba.
-
-🔹 **PHPUnit** – Testing automatizado.
 
 ## 🚀 Funcionalidades Implementadas
 

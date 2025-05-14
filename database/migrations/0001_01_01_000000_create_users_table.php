@@ -19,9 +19,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['admin', 'tutor', 'student', 'company']);
-            // $table->foreignId('school_id')->nullable()->constrained()->nullOnDelete();
-            $table->unsignedBigInteger('school_id')->nullable(); // O el tipo correcto, pero sin ->constrained() ni ->foreign()
+            $table->enum('role', ['Tutor', 'Student']);
+            $table->foreignId('school_id')->nullable()->constrained('schools')->onDelete('set null');
+            $table->date('birthdate')->nullable();
+            $table->string('degree')->nullable();
+            $table->string('city')->nullable();
+            $table->string('address')->nullable();
+            $table->string('zipcode')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
