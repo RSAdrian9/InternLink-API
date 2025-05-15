@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class InternshipAssignment extends Model
 {
@@ -13,7 +12,7 @@ class InternshipAssignment extends Model
     protected $table = 'internship_assignments';
 
     protected $fillable = [
-        'student_id',
+        'user_id',
         'company_id',
         'tutor_assigner_id',
         'start_date',
@@ -21,17 +20,17 @@ class InternshipAssignment extends Model
         'status',
     ];
 
-    public function company(): BelongsTo
+    public function company()
     {
         return $this->belongsTo(Company::class, 'company_id');
     }
 
-    public function student(): BelongsTo
+    public function student()
     {
-        return $this->belongsTo(User::class, 'student_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function tutor(): BelongsTo
+    public function tutor()
     {
         return $this->belongsTo(User::class, 'tutor_assigner_id');
     }

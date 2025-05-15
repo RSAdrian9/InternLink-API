@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('internship_assignments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
-            $table->foreignId('tutor_id')->constrained('tutors')->onDelete('cascade');
+            // Relación al estudiante
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            // Tutor que asignó
+            $table->foreignId('tutor_assigner_id')->constrained('users')->onDelete('cascade');
+            // Relación a la empresa
             $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
             $table->date('start_date');
             $table->date('end_date');
             $table->enum('status', ['Pending', 'Approved', 'Finished'])->default('Pending');
+            $table->unique(['user_id', 'company_id']);
             $table->timestamps();
         });
     }

@@ -8,9 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -28,7 +25,7 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
-        'role',
+        'role', // 'student', 'tutor'
         'school_id',
         'birthdate',
         'degree',
@@ -60,24 +57,17 @@ class User extends Authenticatable
         ];
     }
 
-    public function schools(): BelongsTo
+    public function schools()
     {
         return $this->belongsTo(School::class);
     }
 
-    public function companies(): BelongsToMany
+    public function studentInternshipAssignments()
     {
-        return $this->belongsToMany(Company::class, 'internship')
-                    ->withPivot('id', 'student_id', 'company_id', 'tutor_assigner_id', 'start_date', 'end_date', 'status')
-                    ->withTimestamps();
+        return $this->hasMany(InternshipAssignment::class, 'user_id');
     }
 
-    public function studentInternshipAssignments(): HasMany
-    {
-        return $this->hasMany(InternshipAssignment::class, 'student_id');
-    }
-
-    public function tutorInternshipAssignments(): HasMany
+    public function tutorInternshipAssignments()
     {
         return $this->hasMany(InternshipAssignment::class, 'tutor_assigner_id');
     }
