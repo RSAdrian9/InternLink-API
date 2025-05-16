@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('internship_assignments', function (Blueprint $table) {
             $table->id();
-            // Relación al estudiante
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            // Tutor que asignó
-            $table->foreignId('tutor_assigner_id')->constrained('users')->onDelete('cascade');
-            // Relación a la empresa
-            $table->foreignId('company_id')->constrained('companies')->onDelete('cascade');
+            $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('tutor_assigner_id');
             $table->date('start_date');
             $table->date('end_date');
             $table->enum('status', ['Pending', 'Approved', 'Finished'])->default('Pending');
