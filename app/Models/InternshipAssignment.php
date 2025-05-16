@@ -12,9 +12,9 @@ class InternshipAssignment extends Model
     protected $table = 'internship_assignments';
 
     protected $fillable = [
-        'user_id',
+        'student_id',
         'company_id',
-        'tutor_assigner_id',
+        'tutor_id',
         'start_date',
         'end_date',
         'status',
@@ -27,11 +27,11 @@ class InternshipAssignment extends Model
 
     public function student()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'student_id');
     }
 
     public function tutor()
     {
-        return $this->belongsTo(User::class, 'tutor_assigner_id');
+        return $this->belongsTo(User::class, 'tutor_id');
     }
 }

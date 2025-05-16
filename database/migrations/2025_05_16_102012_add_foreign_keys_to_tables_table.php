@@ -17,8 +17,8 @@ return new class extends Migration
 
         Schema::table('internship_assignments', function (Blueprint $table) {
             $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('tutor_assigner_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->foreign('tutor_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

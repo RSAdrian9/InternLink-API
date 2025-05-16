@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('company_id');
-            $table->unsignedBigInteger('tutor_assigner_id');
+            $table->unsignedBigInteger('tutor_id');
             $table->date('start_date');
             $table->date('end_date');
             $table->enum('status', ['Pending', 'Approved', 'Finished'])->default('Pending');
-            $table->unique(['user_id', 'company_id']);
+            $table->unique(['student_id', 'company_id']);
             $table->timestamps();
         });
     }
