@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SchoolRequest;
 use App\Http\Resources\SchoolResource;
 use App\Models\School;
-use Illuminate\Http\Request;
 
 class SchoolApiController extends Controller
 {
@@ -43,11 +42,9 @@ class SchoolApiController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SchoolRequest $request)
     {
-        // 
-        $request->validate(['name' => 'required', 'city' => 'required']);
-        $school = School::create($request->all());
+        $school = School::create($request->validated());
         return response()->json(new SchoolResource($school), 201);
     }
 
@@ -66,13 +63,9 @@ class SchoolApiController extends Controller
      */
     public function update(SchoolRequest $request, string $id)
     {
-        //
-        $school = School::find($id);
-        $school->update($request->all());
-        return response()->json([
-            'success' => true,
-            'data' => new SchoolResource($school)
-        ], 200);
+        $school = School::findOrFail($id);
+        $school->update($request->validated());
+        return response()->json(new SchoolResource($school), 200);
     }
 
     /**
@@ -80,12 +73,8 @@ class SchoolApiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
-        $school = School::find($id);
+        $school = School::findOrFail($id);
         $school->delete();
-        return response()->json([
-            'success' => true,
-            'data' => new SchoolResource($school)
-        ], 205);
+        return response()->json(['success' => true,'data' => new SchoolResource($school)], 205);
     }
 }

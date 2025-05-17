@@ -18,6 +18,11 @@ class SchoolResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'city' => $this->city,
+            'address' => $this->address,
+            'zipcode' => $this->zipcode,
+            'phone' => $this->phone,
+            'email' => $this->email,
+            'website' => $this->website,
         ];
     }
 }
