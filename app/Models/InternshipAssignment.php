@@ -18,6 +18,7 @@ class InternshipAssignment extends Model
         'start_date',
         'end_date',
         'status',
+        'evaluation',
     ];
 
     public function company()

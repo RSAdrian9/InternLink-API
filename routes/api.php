@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\SchoolApiController;
-use App\Http\Controllers\Api\StudentApiController;
-use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Api\CompanyApiController;
+use App\Http\Controllers\Api\InternshipAssignmentApiController;
+use App\Http\Controllers\Api\UserApiController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,9 +26,8 @@ use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
 // });
 
 Route::resource('schools', SchoolApiController::class);
-Route::resource('students', StudentApiController::class);
 Route::resource('companies', CompanyApiController::class);
 Route::resource('users', UserApiController::class);
-Route::resource('tutors', TutorApiController::class);
-Route::resource('internships', InternshipApiController::class);
+Route::get('/users/role/{role}', [UserApiController::class, 'indexByRole']);
+Route::resource('internshipassignment', InternshipAssignmentApiController::class);
 

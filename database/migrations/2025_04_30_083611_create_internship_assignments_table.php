@@ -18,7 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('tutor_id');
             $table->date('start_date');
             $table->date('end_date');
-            $table->enum('status', ['Pending', 'Approved', 'Finished'])->default('Pending');
+            $table->enum('status', ['Pending', 'Approved', 'Finished', 'Rejected'])->default('Pending');
+            $table->enum('evaluation', ['Passed', 'Failed', 'Not Evaluated'])->default('Not Evaluated')->nullable();
             $table->unique(['student_id', 'company_id']);
             $table->timestamps();
         });
