@@ -17,13 +17,10 @@ class CompanyResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'email' => $this->email,
+            'nif' => $this->nif,
             'address' => $this->address,
-            'city' => $this->city,
-            'state' => $this->state,
-            'zip_code' => $this->zip_code,
-            'country' => $this->country,
-            'phone_number' => $this->phone_number,
+            'phone' => $this->phone,
+            'email' => $this->email,
             'website' => $this->website,
         ];
     }
