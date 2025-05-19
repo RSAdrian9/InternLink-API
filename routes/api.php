@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
 
+// routes/api.php
+require __DIR__.'/api/users.php';
+require __DIR__.'/api/companies.php';
+require __DIR__.'/api/schools.php';
+require __DIR__.'/api/internshipassignment.php';
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -24,10 +29,3 @@ use Laravel\Sanctum\Http\Controllers\CsrfCookieController;
 //     Route::resource('schools', SchoolApiController::class);
 //     Route::resource('students', StudentApiController::class);
 // });
-
-Route::resource('schools', SchoolApiController::class);
-Route::resource('companies', CompanyApiController::class);
-Route::resource('users', UserApiController::class);
-Route::get('/users/role/{role}', [UserApiController::class, 'indexByRole']);
-Route::resource('internshipassignment', InternshipAssignmentApiController::class);
-
