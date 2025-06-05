@@ -39,10 +39,21 @@ class InternshipAssignmentApiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(InternshipAssignmentRequest $request, $id)
+    // public function update(InternshipAssignmentRequest $request, $id)
+    // {
+    //     $assignment = InternshipAssignment::findOrFail($id);
+    //     $assignment->update($request->validated());
+    //     return response()->json(new InternshipAssignmentResource($assignment), 200);
+    // }
+
+    public function update(InternshipAssignmentRequest $request, int $id)
     {
         $assignment = InternshipAssignment::findOrFail($id);
-        $assignment->update($request->validated());
+
+        if (!$assignment->update($request->validated())) {
+            return response()->json(['error' => 'Unable to update internship assignment.'], 400);
+        }
+
         return response()->json(new InternshipAssignmentResource($assignment), 200);
     }
 
@@ -53,6 +64,10 @@ class InternshipAssignmentApiController extends Controller
     {
         $assignment = InternshipAssignment::findOrFail($id);
         $assignment->delete();
-        return response()->json(['message' => 'Internship assignment deleted successfully.'], 204);
+        return response()->json([
+            'success' => true,
+            'message' => 'Internship assignment deleted successfully.',
+            'data' => new InternshipAssignmentResource($assignment)
+        ], 200); // 200 OK response // 204 No Content
     }
 }

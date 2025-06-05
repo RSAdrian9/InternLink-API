@@ -19,8 +19,8 @@ class InternshipAssignmentRequest extends FormRequest
             'tutor_id' => 'required|exists:users,id',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
-            'status' => 'required|string|in:pending,approved,finished,rejected',
-            'evaluation' => 'nullable|string|in:passed,failed,not_evaluated',
+            'status' => 'required|string|in:Pending,Approved,Finished,Rejected',
+            'evaluation' => 'nullable|string|in:Passed,Failed,Not Evaluated',
         ];
     }
 
@@ -39,6 +39,7 @@ class InternshipAssignmentRequest extends FormRequest
             'end_date.date' => 'The end date must be a valid date.',
             'end_date.after_or_equal' => 'The end date must be after or equal to the start date.',
             'status.required' => 'The status is required.',
+            'status.string' => 'The status must be a string.',
             'status.in' => 'The status must be one of: pending, approved, finished, rejected.',
             'evaluation.string' => 'The evaluation must be a string.',
             'evaluation.in' => 'The evaluation must be one of: passed, failed, not evaluated.',
