@@ -22,22 +22,22 @@ class SchoolApiController extends Controller
     /**
      * Display a listing of the resource by id.
      */
-    public function indexById($id)
-    {
-        // Se obtiene la escuela por su id
-        $school = School::find($id);
-        return new SchoolResource($school);
-    }
+    // public function indexById($id)
+    // {
+    //     // Se obtiene la escuela por su id
+    //     $school = School::find($id);
+    //     return new SchoolResource($school);
+    // }
 
     /**
      * Display a listing of the resource by name.
      */
-    public function indexByName($name)
-    {
-        // Se obtiene la escuela por su nombre
-        $school = School::find($name);
-        return new SchoolResource($school);
-    }
+    // public function indexByName($name)
+    // {
+    //     // Se obtiene la escuela por su nombre
+    //     $school = School::find($name);
+    //     return new SchoolResource($school);
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -61,10 +61,14 @@ class SchoolApiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(SchoolRequest $request, string $id)
+    public function update(SchoolRequest $request, int $id)
     {
         $school = School::findOrFail($id);
-        $school->update($request->validated());
+
+        if (!$school->update($request->validated())) {
+            return response()->json(['error' => 'Unable to update school.'], 400);
+        }
+
         return response()->json(new SchoolResource($school), 200);
     }
 
@@ -75,6 +79,10 @@ class SchoolApiController extends Controller
     {
         $school = School::findOrFail($id);
         $school->delete();
-        return response()->json(['success' => true,'data' => new SchoolResource($school)], 205);
+        return response()->json([
+            'success' => true,
+            'message' => 'School deleted successfully.',
+            'data' => new SchoolResource($school)
+        ], 200); // 200 OK response // 204 No Content
     }
 }
