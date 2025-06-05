@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('role', ['Tutor', 'Student']);
             $table->unsignedBigInteger('school_id')->nullable();
             $table->date('birthdate')->nullable();
-            $table->string('degree')->nullable();
+            $table->enum('degree', ['1ºSMR', '2ºSMR', '1ºDAM', '2ºDAM', '2ºDAW'])->nullable();
             $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->string('zipcode')->nullable();

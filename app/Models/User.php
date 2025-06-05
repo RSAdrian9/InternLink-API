@@ -69,6 +69,6 @@ class User extends Authenticatable
 
     public function tutorInternshipAssignments()
     {
-        return $this->hasMany(InternshipAssignment::class, 'tutor_assigner_id');
+        return $this->hasMany(InternshipAssignment::class, 'tutor_id');
     }
 }

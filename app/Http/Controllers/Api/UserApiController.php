@@ -73,7 +73,10 @@ class UserApiController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-
-        return response()->json(['message' => 'User deleted successfully.'], 204);
+        return response()->json([
+            'success' => true,
+            'message' => 'User deleted successfully.',
+            'data' => new UserResource($user)
+        ], 200); // 200 OK response // 204 No Content
     }
 }

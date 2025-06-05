@@ -16,33 +16,29 @@ class UserSeeder extends Seeder
     {
         // Tutor
         User::create([
-            'name' => 'Juan Tutor',
+            'name' => 'Juan',
             'email' => 'tutor@itc.edu',
             'password' => Hash::make('password'),
-            'role' => 'tutor',
+            'role' => 'Tutor',
             'dni' => '11111111B',
             'phone' => '600000001',
             'school_id' => 1,
-            'birthdate' => '1980-01-01',
-            'degree' => 'Departamento de Informática',
-            'city' => 'Córdoba',
-            'zipcode' => '14711'
         ]);
 
         // Estudiante
         User::create([
-            'name' => 'Laura Estudiante',
+            'name' => 'Laura',
             'email' => 'laura@student.itc.edu',
             'password' => Hash::make('password'),
-            'role' => 'student',
+            'role' => 'Student',
             'dni' => '22222222C',
             'phone' => '600000002',
             'school_id' => 1,
             'birthdate' => '2000-12-01',
-            'degree' => '2º DAW',
+            'degree' => '2ºDAW',
             'city' => 'Córdoba',
             'address' => 'Calle de la Tecnología 123',
-            'zipcode' => '14100'
+            'zipcode' => '14520'
         ]);
     }
 }
