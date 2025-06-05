@@ -39,10 +39,14 @@ class CompanyApiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CompanyRequest $request, $id)
+    public function update(CompanyRequest $request, int $id)
     {
         $company = Company::findOrFail($id);
-        $company->update($request->validated());
+
+        if (!$company->update($request->validated())) {
+            return response()->json(['error' => 'Unable to update school.'], 400);
+        }
+
         return response()->json(new CompanyResource($company), 200);
     }
 
@@ -53,6 +57,10 @@ class CompanyApiController extends Controller
     {
         $company = Company::findOrFail($id);
         $company->delete();
-        return response()->json(['message' => 'Company deleted successfully.'], 204);
+        return response()->json([
+            'success' => true,
+            'message' => 'Company deleted successfully.',
+            'data' => new CompanyResource($company)
+        ], 200); // 200 OK response // 204 No Content
     }
 }

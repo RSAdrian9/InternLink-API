@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('nif')->unique();
             $table->string('address');
-            $table->string('phone');
+            $table->string('phone')->nullable()->unique();
             $table->string('email')->unique();
-            $table->string('website')->nullable();
+            $table->string('website')->nullable()->unique();
             $table->timestamps();
         });
     }
