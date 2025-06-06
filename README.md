@@ -18,9 +18,13 @@ Aplicación web desarrollada en **Laravel 11** con una API RESTful robusta, dise
 ## **📌 Tecnologías Utilizadas**
 
 🔹 **Laravel 11** – Framework PHP robusto y modular para el backend.
+
 🔹 **MySQL** – Sistema de gestión de base de datos relacional.
+
 🔹 **Laravel Sanctum** – Solución ligera para la autenticación de APIs (tokens y SPA).
+
 🔹 **Composer** – Gestor de paquetes de PHP.
+
 🔹 **PHPUnit** – Framework de pruebas para el backend.
 
 ## 🚀 Funcionalidades Implementadas
