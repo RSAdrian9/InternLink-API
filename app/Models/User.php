@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\School;
+use App\Models\InternshipAssignment;
 
 class User extends Authenticatable
 {
@@ -64,7 +66,7 @@ class User extends Authenticatable
 
     public function studentInternshipAssignments()
     {
-        return $this->hasMany(InternshipAssignment::class, 'user_id');
+        return $this->hasMany(InternshipAssignment::class, 'student_id');
     }
 
     public function tutorInternshipAssignments()

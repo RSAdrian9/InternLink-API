@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\UserResource;
+use App\Http\Resources\CompanyResource;
 
 class InternshipAssignmentResource extends JsonResource
 {
@@ -23,6 +25,10 @@ class InternshipAssignmentResource extends JsonResource
             'end_date' => $this->end_date,
             'status' => $this->status,
             'evaluation' => $this->evaluation,
+
+            'student' => UserResource::make($this->whenLoaded('student')),
+            'company' => CompanyResource::make($this->whenLoaded('company')),
+            'tutor' => UserResource::make($this->whenLoaded('tutor')),
         ];
     }
 }
